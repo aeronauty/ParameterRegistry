@@ -1,0 +1,323 @@
+{
+  "instances": {
+    "tesla_powerwall": {
+      "capacity_kwh": 13.5,
+      "cost": 7000,
+      "efficiency": 0.9,
+      "cycle_life": 6000,
+      "energy_density_wh_per_kg": 260,
+      "maintenance_cost_annual": 200
+    },
+    "lg_chem_resu": {
+      "capacity_kwh": 9.8,
+      "cost": 5500,
+      "efficiency": 0.92,
+      "cycle_life": 6000,
+      "energy_density_wh_per_kg": 270,
+      "maintenance_cost_annual": 150
+    },
+    "byd_battery_box": {
+      "capacity_kwh": 10.2,
+      "cost": 4800,
+      "efficiency": 0.88,
+      "energy_density_wh_per_kg": 250,
+      "maintenance_cost_annual": 180
+    },
+    "sonnen_eco": {
+      "capacity_kwh": 15,
+      "cost": 8500,
+      "cycle_life": 5500,
+      "energy_density_wh_per_kg": 240
+    },
+    "enphase_encharge": {
+      "capacity_kwh": 10.1,
+      "cost": 6200,
+      "efficiency": 0.91,
+      "cycle_life": 4000,
+      "energy_density_wh_per_kg": 255,
+      "maintenance_cost_annual": 120
+    }
+  },
+  "metadata": {
+    "tesla_powerwall": {
+      "capacity_kwh": {
+        "value": 13.5,
+        "unit": "",
+        "description": "battery_pack capacity kwh",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Tesla Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.95
+      },
+      "cost": {
+        "value": 7000,
+        "unit": "usd",
+        "description": "battery_pack cost",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Tesla Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.95
+      },
+      "efficiency": {
+        "value": 0.9,
+        "unit": "ratio",
+        "description": "battery_pack efficiency",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Tesla Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.95
+      },
+      "cycle_life": {
+        "value": 6000,
+        "unit": "",
+        "description": "battery_pack cycle life",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Tesla Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.95
+      },
+      "energy_density_wh_per_kg": {
+        "value": 260,
+        "unit": "",
+        "description": "battery_pack energy density wh per kg",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Tesla Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.95
+      },
+      "maintenance_cost_annual": {
+        "value": 200,
+        "unit": "usd",
+        "description": "battery_pack maintenance cost annual",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Tesla Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.95
+      }
+    },
+    "lg_chem_resu": {
+      "capacity_kwh": {
+        "value": 9.8,
+        "unit": "",
+        "description": "battery_pack capacity kwh",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "LG Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      },
+      "cost": {
+        "value": 5500,
+        "unit": "usd",
+        "description": "battery_pack cost",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "LG Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      },
+      "efficiency": {
+        "value": 0.92,
+        "unit": "ratio",
+        "description": "battery_pack efficiency",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "LG Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      },
+      "cycle_life": {
+        "value": 6000,
+        "unit": "",
+        "description": "battery_pack cycle life",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "LG Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      },
+      "energy_density_wh_per_kg": {
+        "value": 270,
+        "unit": "",
+        "description": "battery_pack energy density wh per kg",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "LG Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      },
+      "maintenance_cost_annual": {
+        "value": 150,
+        "unit": "usd",
+        "description": "battery_pack maintenance cost annual",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "LG Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      }
+    },
+    "byd_battery_box": {
+      "capacity_kwh": {
+        "value": 10.2,
+        "unit": "",
+        "description": "battery_pack capacity kwh",
+        "type": "instance",
+        "added_by": "Procurement",
+        "source": "BYD Quote",
+        "date_added": "2024-01-01",
+        "confidence": 0.88
+      },
+      "cost": {
+        "value": 4800,
+        "unit": "usd",
+        "description": "battery_pack cost",
+        "type": "instance",
+        "added_by": "Procurement",
+        "source": "BYD Quote",
+        "date_added": "2024-01-01",
+        "confidence": 0.88
+      },
+      "efficiency": {
+        "value": 0.88,
+        "unit": "ratio",
+        "description": "battery_pack efficiency",
+        "type": "instance",
+        "added_by": "Procurement",
+        "source": "BYD Quote",
+        "date_added": "2024-01-01",
+        "confidence": 0.88
+      },
+      "energy_density_wh_per_kg": {
+        "value": 250,
+        "unit": "",
+        "description": "battery_pack energy density wh per kg",
+        "type": "instance",
+        "added_by": "Procurement",
+        "source": "BYD Quote",
+        "date_added": "2024-01-01",
+        "confidence": 0.88
+      },
+      "maintenance_cost_annual": {
+        "value": 180,
+        "unit": "usd",
+        "description": "battery_pack maintenance cost annual",
+        "type": "instance",
+        "added_by": "Procurement",
+        "source": "BYD Quote",
+        "date_added": "2024-01-01",
+        "confidence": 0.88
+      }
+    },
+    "sonnen_eco": {
+      "capacity_kwh": {
+        "value": 15,
+        "unit": "",
+        "description": "battery_pack capacity kwh",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "Sonnen Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.85
+      },
+      "cost": {
+        "value": 8500,
+        "unit": "usd",
+        "description": "battery_pack cost",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "Sonnen Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.85
+      },
+      "cycle_life": {
+        "value": 5500,
+        "unit": "",
+        "description": "battery_pack cycle life",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "Sonnen Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.85
+      },
+      "energy_density_wh_per_kg": {
+        "value": 240,
+        "unit": "",
+        "description": "battery_pack energy density wh per kg",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "Sonnen Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.85
+      }
+    },
+    "enphase_encharge": {
+      "capacity_kwh": {
+        "value": 10.1,
+        "unit": "",
+        "description": "battery_pack capacity kwh",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Enphase Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.92
+      },
+      "cost": {
+        "value": 6200,
+        "unit": "usd",
+        "description": "battery_pack cost",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Enphase Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.92
+      },
+      "efficiency": {
+        "value": 0.91,
+        "unit": "ratio",
+        "description": "battery_pack efficiency",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Enphase Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.92
+      },
+      "cycle_life": {
+        "value": 4000,
+        "unit": "",
+        "description": "battery_pack cycle life",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Enphase Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.92
+      },
+      "energy_density_wh_per_kg": {
+        "value": 255,
+        "unit": "",
+        "description": "battery_pack energy density wh per kg",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Enphase Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.92
+      },
+      "maintenance_cost_annual": {
+        "value": 120,
+        "unit": "usd",
+        "description": "battery_pack maintenance cost annual",
+        "type": "instance",
+        "added_by": "Systems Engineer",
+        "source": "Enphase Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.92
+      }
+    }
+  }
+}

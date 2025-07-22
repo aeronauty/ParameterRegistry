@@ -1,0 +1,143 @@
+{
+  "instances": {
+    "nord_stream_segment": {
+      "capacity_j_day": 55000000,
+      "cost_per_km": 280000,
+      "pressure": 75
+    },
+    "trans_adriatic": {
+      "capacity_j_day": 36000000,
+      "cost_per_km": 220000,
+      "pressure": 68
+    },
+    "regional_feeder_a": {
+      "capacity_j_day": 18000000,
+      "cost_per_km": 150000
+    },
+    "distribution_main": {
+      "capacity_j_day": 28000000,
+      "cost_per_km": 190000,
+      "pressure": 62
+    }
+  },
+  "metadata": {
+    "nord_stream_segment": {
+      "capacity_j_day": {
+        "value": 55000000,
+        "unit": "",
+        "description": "pipeline capacity j day",
+        "type": "instance",
+        "added_by": "Engineering",
+        "source": "Pipeline Database",
+        "date_added": "2024-01-01",
+        "confidence": 0.94
+      },
+      "cost_per_km": {
+        "value": 280000,
+        "unit": "usd",
+        "description": "pipeline cost per km",
+        "type": "instance",
+        "added_by": "Engineering",
+        "source": "Pipeline Database",
+        "date_added": "2024-01-01",
+        "confidence": 0.94
+      },
+      "pressure": {
+        "value": 75,
+        "unit": "bar",
+        "description": "pipeline pressure",
+        "type": "instance",
+        "added_by": "Engineering",
+        "source": "Pipeline Database",
+        "date_added": "2024-01-01",
+        "confidence": 0.94
+      }
+    },
+    "trans_adriatic": {
+      "capacity_j_day": {
+        "value": 36000000,
+        "unit": "",
+        "description": "pipeline capacity j day",
+        "type": "instance",
+        "added_by": "Engineering",
+        "source": "TAP Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.92
+      },
+      "cost_per_km": {
+        "value": 220000,
+        "unit": "usd",
+        "description": "pipeline cost per km",
+        "type": "instance",
+        "added_by": "Engineering",
+        "source": "TAP Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.92
+      },
+      "pressure": {
+        "value": 68,
+        "unit": "bar",
+        "description": "pipeline pressure",
+        "type": "instance",
+        "added_by": "Engineering",
+        "source": "TAP Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.92
+      }
+    },
+    "regional_feeder_a": {
+      "capacity_j_day": {
+        "value": 18000000,
+        "unit": "",
+        "description": "pipeline capacity j day",
+        "type": "instance",
+        "added_by": "Project Manager",
+        "source": "Regional Study",
+        "date_added": "2024-01-01",
+        "confidence": 0.8
+      },
+      "cost_per_km": {
+        "value": 150000,
+        "unit": "usd",
+        "description": "pipeline cost per km",
+        "type": "instance",
+        "added_by": "Project Manager",
+        "source": "Regional Study",
+        "date_added": "2024-01-01",
+        "confidence": 0.8
+      }
+    },
+    "distribution_main": {
+      "capacity_j_day": {
+        "value": 28000000,
+        "unit": "",
+        "description": "pipeline capacity j day",
+        "type": "instance",
+        "added_by": "Engineering",
+        "source": "Design Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.89
+      },
+      "cost_per_km": {
+        "value": 190000,
+        "unit": "usd",
+        "description": "pipeline cost per km",
+        "type": "instance",
+        "added_by": "Engineering",
+        "source": "Design Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.89
+      },
+      "pressure": {
+        "value": 62,
+        "unit": "bar",
+        "description": "pipeline pressure",
+        "type": "instance",
+        "added_by": "Engineering",
+        "source": "Design Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.89
+      }
+    }
+  }
+}

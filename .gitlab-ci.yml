@@ -1,0 +1,56 @@
+image: node:18
+
+# Install and configure dependencies
+before_script:
+  - npm ci --cache .npm --prefer-offline
+
+cache:
+  paths:
+    - .npm/
+
+# Define pipeline stages
+stages:
+  - generate-data
+  - build
+  - deploy
+
+# Generate data files from CSV
+generate-data:
+  stage: generate-data
+  script:
+    - npm run generate-data
+  artifacts:
+    paths:
+      - public/data/
+    expire_in: 1 hour
+
+# Build the application
+build:
+  stage: build
+  dependencies:
+    - generate-data
+  script:
+    - npm run build
+    - rm -rf public
+    - mv dist public
+  artifacts:
+    paths:
+      - public/
+    expire_in: 1 week
+  only:
+    - main
+    - master
+
+# Deploy to GitLab Pages
+pages:
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - echo "Deploying to GitLab Pages..."
+  artifacts:
+    paths:
+      - public/
+  only:
+    - main
+    - master

@@ -1,0 +1,790 @@
+{
+  "metadata": {
+    "created": "2025-07-17T18:33:21.244Z",
+    "version": "1.0",
+    "description": "Hierarchical Parameter Registry with Interactive Interface"
+  },
+  "constants": {
+    "methane.properties.lower_heating_value": {
+      "value": 50,
+      "unit": "MJ/kg",
+      "description": "Lower heating value",
+      "type": "constant",
+      "added_by": "J. Smith",
+      "source": "NIST Database",
+      "date_added": "2024-01-01",
+      "confidence": 0.99
+    },
+    "methane.properties.density_stp": {
+      "value": 0.717,
+      "unit": "kg/m³",
+      "description": "Density at standard temperature and pressure",
+      "type": "constant",
+      "added_by": "J. Smith",
+      "source": "NIST Database",
+      "date_added": "2024-01-01",
+      "confidence": 0.99
+    }
+  },
+  "classes": {
+    "lng_truck": {
+      "instances": {
+        "volvo_fh460": {
+          "capacity": 185000,
+          "cost": 89000,
+          "efficiency": 0.87,
+          "range": 780,
+          "fuel_rate_l_per_100km": 38,
+          "maintenance_cost_annual": 12500
+        },
+        "scania_r500": {
+          "capacity": 195000,
+          "cost": 94000,
+          "efficiency": 0.89,
+          "range": 820,
+          "fuel_rate_l_per_100km": 36,
+          "maintenance_cost_annual": 13200
+        },
+        "man_tgx": {
+          "capacity": 170000,
+          "cost": 82000,
+          "efficiency": 0.84,
+          "range": 740,
+          "maintenance_cost_annual": 11800
+        },
+        "iveco_stralis": {
+          "capacity": 178000,
+          "cost": 86000,
+          "range": 760,
+          "fuel_rate_l_per_100km": 39
+        },
+        "mercedes_actros": {
+          "capacity": 188000,
+          "cost": 91000,
+          "efficiency": 0.86,
+          "range": 790,
+          "fuel_rate_l_per_100km": 37,
+          "maintenance_cost_annual": 12800
+        }
+      },
+      "metadata": {
+        "volvo_fh460": {
+          "capacity": {
+            "value": 185000,
+            "unit": "mj",
+            "description": "lng_truck capacity",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Volvo Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.92
+          },
+          "cost": {
+            "value": 89000,
+            "unit": "usd",
+            "description": "lng_truck cost",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Volvo Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.92
+          },
+          "efficiency": {
+            "value": 0.87,
+            "unit": "ratio",
+            "description": "lng_truck efficiency",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Volvo Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.92
+          },
+          "range": {
+            "value": 780,
+            "unit": "km",
+            "description": "lng_truck range",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Volvo Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.92
+          },
+          "fuel_rate_l_per_100km": {
+            "value": 38,
+            "unit": "",
+            "description": "lng_truck fuel rate l per 100km",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Volvo Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.92
+          },
+          "maintenance_cost_annual": {
+            "value": 12500,
+            "unit": "usd",
+            "description": "lng_truck maintenance cost annual",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Volvo Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.92
+          }
+        },
+        "scania_r500": {
+          "capacity": {
+            "value": 195000,
+            "unit": "mj",
+            "description": "lng_truck capacity",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Scania Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.9
+          },
+          "cost": {
+            "value": 94000,
+            "unit": "usd",
+            "description": "lng_truck cost",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Scania Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.9
+          },
+          "efficiency": {
+            "value": 0.89,
+            "unit": "ratio",
+            "description": "lng_truck efficiency",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Scania Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.9
+          },
+          "range": {
+            "value": 820,
+            "unit": "km",
+            "description": "lng_truck range",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Scania Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.9
+          },
+          "fuel_rate_l_per_100km": {
+            "value": 36,
+            "unit": "",
+            "description": "lng_truck fuel rate l per 100km",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Scania Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.9
+          },
+          "maintenance_cost_annual": {
+            "value": 13200,
+            "unit": "usd",
+            "description": "lng_truck maintenance cost annual",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Scania Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.9
+          }
+        },
+        "man_tgx": {
+          "capacity": {
+            "value": 170000,
+            "unit": "mj",
+            "description": "lng_truck capacity",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "MAN Datasheet",
+            "date_added": "2024-01-01",
+            "confidence": 0.88
+          },
+          "cost": {
+            "value": 82000,
+            "unit": "usd",
+            "description": "lng_truck cost",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "MAN Datasheet",
+            "date_added": "2024-01-01",
+            "confidence": 0.88
+          },
+          "efficiency": {
+            "value": 0.84,
+            "unit": "ratio",
+            "description": "lng_truck efficiency",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "MAN Datasheet",
+            "date_added": "2024-01-01",
+            "confidence": 0.88
+          },
+          "range": {
+            "value": 740,
+            "unit": "km",
+            "description": "lng_truck range",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "MAN Datasheet",
+            "date_added": "2024-01-01",
+            "confidence": 0.88
+          },
+          "maintenance_cost_annual": {
+            "value": 11800,
+            "unit": "usd",
+            "description": "lng_truck maintenance cost annual",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "MAN Datasheet",
+            "date_added": "2024-01-01",
+            "confidence": 0.88
+          }
+        },
+        "iveco_stralis": {
+          "capacity": {
+            "value": 178000,
+            "unit": "mj",
+            "description": "lng_truck capacity",
+            "type": "instance",
+            "added_by": "Procurement",
+            "source": "Iveco Quote",
+            "date_added": "2024-01-01",
+            "confidence": 0.85
+          },
+          "cost": {
+            "value": 86000,
+            "unit": "usd",
+            "description": "lng_truck cost",
+            "type": "instance",
+            "added_by": "Procurement",
+            "source": "Iveco Quote",
+            "date_added": "2024-01-01",
+            "confidence": 0.85
+          },
+          "range": {
+            "value": 760,
+            "unit": "km",
+            "description": "lng_truck range",
+            "type": "instance",
+            "added_by": "Procurement",
+            "source": "Iveco Quote",
+            "date_added": "2024-01-01",
+            "confidence": 0.85
+          },
+          "fuel_rate_l_per_100km": {
+            "value": 39,
+            "unit": "",
+            "description": "lng_truck fuel rate l per 100km",
+            "type": "instance",
+            "added_by": "Procurement",
+            "source": "Iveco Quote",
+            "date_added": "2024-01-01",
+            "confidence": 0.85
+          }
+        },
+        "mercedes_actros": {
+          "capacity": {
+            "value": 188000,
+            "unit": "mj",
+            "description": "lng_truck capacity",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Mercedes Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.91
+          },
+          "cost": {
+            "value": 91000,
+            "unit": "usd",
+            "description": "lng_truck cost",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Mercedes Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.91
+          },
+          "efficiency": {
+            "value": 0.86,
+            "unit": "ratio",
+            "description": "lng_truck efficiency",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Mercedes Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.91
+          },
+          "range": {
+            "value": 790,
+            "unit": "km",
+            "description": "lng_truck range",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Mercedes Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.91
+          },
+          "fuel_rate_l_per_100km": {
+            "value": 37,
+            "unit": "",
+            "description": "lng_truck fuel rate l per 100km",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Mercedes Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.91
+          },
+          "maintenance_cost_annual": {
+            "value": 12800,
+            "unit": "usd",
+            "description": "lng_truck maintenance cost annual",
+            "type": "instance",
+            "added_by": "Fleet Manager",
+            "source": "Mercedes Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.91
+          }
+        }
+      }
+    },
+    "pipeline": {
+      "instances": {
+        "nord_stream_segment": {
+          "capacity_j_day": 55000000,
+          "cost_per_km": 280000,
+          "pressure": 75
+        },
+        "trans_adriatic": {
+          "capacity_j_day": 36000000,
+          "cost_per_km": 220000,
+          "pressure": 68
+        },
+        "regional_feeder_a": {
+          "capacity_j_day": 18000000,
+          "cost_per_km": 150000
+        },
+        "distribution_main": {
+          "capacity_j_day": 28000000,
+          "cost_per_km": 190000,
+          "pressure": 62
+        }
+      },
+      "metadata": {
+        "nord_stream_segment": {
+          "capacity_j_day": {
+            "value": 55000000,
+            "unit": "",
+            "description": "pipeline capacity j day",
+            "type": "instance",
+            "added_by": "Engineering",
+            "source": "Pipeline Database",
+            "date_added": "2024-01-01",
+            "confidence": 0.94
+          },
+          "cost_per_km": {
+            "value": 280000,
+            "unit": "usd",
+            "description": "pipeline cost per km",
+            "type": "instance",
+            "added_by": "Engineering",
+            "source": "Pipeline Database",
+            "date_added": "2024-01-01",
+            "confidence": 0.94
+          },
+          "pressure": {
+            "value": 75,
+            "unit": "bar",
+            "description": "pipeline pressure",
+            "type": "instance",
+            "added_by": "Engineering",
+            "source": "Pipeline Database",
+            "date_added": "2024-01-01",
+            "confidence": 0.94
+          }
+        },
+        "trans_adriatic": {
+          "capacity_j_day": {
+            "value": 36000000,
+            "unit": "",
+            "description": "pipeline capacity j day",
+            "type": "instance",
+            "added_by": "Engineering",
+            "source": "TAP Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.92
+          },
+          "cost_per_km": {
+            "value": 220000,
+            "unit": "usd",
+            "description": "pipeline cost per km",
+            "type": "instance",
+            "added_by": "Engineering",
+            "source": "TAP Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.92
+          },
+          "pressure": {
+            "value": 68,
+            "unit": "bar",
+            "description": "pipeline pressure",
+            "type": "instance",
+            "added_by": "Engineering",
+            "source": "TAP Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.92
+          }
+        },
+        "regional_feeder_a": {
+          "capacity_j_day": {
+            "value": 18000000,
+            "unit": "",
+            "description": "pipeline capacity j day",
+            "type": "instance",
+            "added_by": "Project Manager",
+            "source": "Regional Study",
+            "date_added": "2024-01-01",
+            "confidence": 0.8
+          },
+          "cost_per_km": {
+            "value": 150000,
+            "unit": "usd",
+            "description": "pipeline cost per km",
+            "type": "instance",
+            "added_by": "Project Manager",
+            "source": "Regional Study",
+            "date_added": "2024-01-01",
+            "confidence": 0.8
+          }
+        },
+        "distribution_main": {
+          "capacity_j_day": {
+            "value": 28000000,
+            "unit": "",
+            "description": "pipeline capacity j day",
+            "type": "instance",
+            "added_by": "Engineering",
+            "source": "Design Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.89
+          },
+          "cost_per_km": {
+            "value": 190000,
+            "unit": "usd",
+            "description": "pipeline cost per km",
+            "type": "instance",
+            "added_by": "Engineering",
+            "source": "Design Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.89
+          },
+          "pressure": {
+            "value": 62,
+            "unit": "bar",
+            "description": "pipeline pressure",
+            "type": "instance",
+            "added_by": "Engineering",
+            "source": "Design Specs",
+            "date_added": "2024-01-01",
+            "confidence": 0.89
+          }
+        }
+      }
+    },
+    "terminal": {
+      "instances": {
+        "rotterdam_gate": {
+          "capacity": 5200000000,
+          "cost": 18500000,
+          "throughput_j_day": 580000,
+          "efficiency": 0.94,
+          "safety_score": 9.3
+        },
+        "zeebrugge_lng": {
+          "capacity": 3800000000,
+          "cost": 14200000,
+          "throughput_j_day": 420000,
+          "efficiency": 0.91,
+          "safety_score": 9.1
+        },
+        "montoir_terminal": {
+          "capacity": 2900000000,
+          "throughput_j_day": 320000,
+          "efficiency": 0.88,
+          "safety_score": 8.9
+        },
+        "isle_of_grain": {
+          "capacity": 4100000000,
+          "cost": 15800000,
+          "efficiency": 0.9,
+          "safety_score": 9
+        }
+      },
+      "metadata": {
+        "rotterdam_gate": {
+          "capacity": {
+            "value": 5200000000,
+            "unit": "j",
+            "description": "terminal capacity",
+            "type": "instance",
+            "added_by": "Terminal Engineer",
+            "source": "Gate Terminal Data",
+            "date_added": "2024-01-01",
+            "confidence": 0.96
+          },
+          "cost": {
+            "value": 18500000,
+            "unit": "usd",
+            "description": "terminal cost",
+            "type": "instance",
+            "added_by": "Terminal Engineer",
+            "source": "Gate Terminal Data",
+            "date_added": "2024-01-01",
+            "confidence": 0.96
+          },
+          "throughput_j_day": {
+            "value": 580000,
+            "unit": "",
+            "description": "terminal throughput j day",
+            "type": "instance",
+            "added_by": "Terminal Engineer",
+            "source": "Gate Terminal Data",
+            "date_added": "2024-01-01",
+            "confidence": 0.96
+          },
+          "efficiency": {
+            "value": 0.94,
+            "unit": "ratio",
+            "description": "terminal efficiency",
+            "type": "instance",
+            "added_by": "Terminal Engineer",
+            "source": "Gate Terminal Data",
+            "date_added": "2024-01-01",
+            "confidence": 0.96
+          },
+          "safety_score": {
+            "value": 9.3,
+            "unit": "",
+            "description": "terminal safety score",
+            "type": "instance",
+            "added_by": "Terminal Engineer",
+            "source": "Gate Terminal Data",
+            "date_added": "2024-01-01",
+            "confidence": 0.96
+          }
+        },
+        "zeebrugge_lng": {
+          "capacity": {
+            "value": 3800000000,
+            "unit": "j",
+            "description": "terminal capacity",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "Zeebrugge Reports",
+            "date_added": "2024-01-01",
+            "confidence": 0.93
+          },
+          "cost": {
+            "value": 14200000,
+            "unit": "usd",
+            "description": "terminal cost",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "Zeebrugge Reports",
+            "date_added": "2024-01-01",
+            "confidence": 0.93
+          },
+          "throughput_j_day": {
+            "value": 420000,
+            "unit": "",
+            "description": "terminal throughput j day",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "Zeebrugge Reports",
+            "date_added": "2024-01-01",
+            "confidence": 0.93
+          },
+          "efficiency": {
+            "value": 0.91,
+            "unit": "ratio",
+            "description": "terminal efficiency",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "Zeebrugge Reports",
+            "date_added": "2024-01-01",
+            "confidence": 0.93
+          },
+          "safety_score": {
+            "value": 9.1,
+            "unit": "",
+            "description": "terminal safety score",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "Zeebrugge Reports",
+            "date_added": "2024-01-01",
+            "confidence": 0.93
+          }
+        },
+        "montoir_terminal": {
+          "capacity": {
+            "value": 2900000000,
+            "unit": "j",
+            "description": "terminal capacity",
+            "type": "instance",
+            "added_by": "Terminal Engineer",
+            "source": "Montoir Data",
+            "date_added": "2024-01-01",
+            "confidence": 0.87
+          },
+          "throughput_j_day": {
+            "value": 320000,
+            "unit": "",
+            "description": "terminal throughput j day",
+            "type": "instance",
+            "added_by": "Terminal Engineer",
+            "source": "Montoir Data",
+            "date_added": "2024-01-01",
+            "confidence": 0.87
+          },
+          "efficiency": {
+            "value": 0.88,
+            "unit": "ratio",
+            "description": "terminal efficiency",
+            "type": "instance",
+            "added_by": "Terminal Engineer",
+            "source": "Montoir Data",
+            "date_added": "2024-01-01",
+            "confidence": 0.87
+          },
+          "safety_score": {
+            "value": 8.9,
+            "unit": "",
+            "description": "terminal safety score",
+            "type": "instance",
+            "added_by": "Terminal Engineer",
+            "source": "Montoir Data",
+            "date_added": "2024-01-01",
+            "confidence": 0.87
+          }
+        },
+        "isle_of_grain": {
+          "capacity": {
+            "value": 4100000000,
+            "unit": "j",
+            "description": "terminal capacity",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "National Grid",
+            "date_added": "2024-01-01",
+            "confidence": 0.91
+          },
+          "cost": {
+            "value": 15800000,
+            "unit": "usd",
+            "description": "terminal cost",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "National Grid",
+            "date_added": "2024-01-01",
+            "confidence": 0.91
+          },
+          "efficiency": {
+            "value": 0.9,
+            "unit": "ratio",
+            "description": "terminal efficiency",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "National Grid",
+            "date_added": "2024-01-01",
+            "confidence": 0.91
+          },
+          "safety_score": {
+            "value": 9,
+            "unit": "",
+            "description": "terminal safety score",
+            "type": "instance",
+            "added_by": "Operations",
+            "source": "National Grid",
+            "date_added": "2024-01-01",
+            "confidence": 0.91
+          }
+        }
+      }
+    },
+    "compressor": {
+      "instances": {
+        "siemens_sgt800": {
+          "power": 3200,
+          "cost": 620000
+        },
+        "ge_lm2500": {
+          "power": 2800,
+          "cost": 580000
+        },
+        "solar_mars100": {
+          "power": 1900
+        }
+      },
+      "metadata": {
+        "siemens_sgt800": {
+          "power": {
+            "value": 3200,
+            "unit": "kw",
+            "description": "compressor power",
+            "type": "instance",
+            "added_by": "Mechanical Engineer",
+            "source": "Siemens Datasheet",
+            "date_added": "2024-01-01",
+            "confidence": 0.95
+          },
+          "cost": {
+            "value": 620000,
+            "unit": "usd",
+            "description": "compressor cost",
+            "type": "instance",
+            "added_by": "Mechanical Engineer",
+            "source": "Siemens Datasheet",
+            "date_added": "2024-01-01",
+            "confidence": 0.95
+          }
+        },
+        "ge_lm2500": {
+          "power": {
+            "value": 2800,
+            "unit": "kw",
+            "description": "compressor power",
+            "type": "instance",
+            "added_by": "Procurement",
+            "source": "GE Quote",
+            "date_added": "2024-01-01",
+            "confidence": 0.92
+          },
+          "cost": {
+            "value": 580000,
+            "unit": "usd",
+            "description": "compressor cost",
+            "type": "instance",
+            "added_by": "Procurement",
+            "source": "GE Quote",
+            "date_added": "2024-01-01",
+            "confidence": 0.92
+          }
+        },
+        "solar_mars100": {
+          "power": {
+            "value": 1900,
+            "unit": "kw",
+            "description": "compressor power",
+            "type": "instance",
+            "added_by": "Engineering",
+            "source": "Solar Turbines",
+            "date_added": "2024-01-01",
+            "confidence": 0.88
+          }
+        }
+      }
+    }
+  }
+}

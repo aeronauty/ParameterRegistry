@@ -1,0 +1,220 @@
+{
+  "instances": {
+    "rotterdam_gate": {
+      "capacity": 5200000000,
+      "cost": 18500000,
+      "throughput_j_day": 580000,
+      "efficiency": 0.94,
+      "safety_score": 9.3
+    },
+    "zeebrugge_lng": {
+      "capacity": 3800000000,
+      "cost": 14200000,
+      "throughput_j_day": 420000,
+      "efficiency": 0.91,
+      "safety_score": 9.1
+    },
+    "montoir_terminal": {
+      "capacity": 2900000000,
+      "throughput_j_day": 320000,
+      "efficiency": 0.88,
+      "safety_score": 8.9
+    },
+    "isle_of_grain": {
+      "capacity": 4100000000,
+      "cost": 15800000,
+      "efficiency": 0.9,
+      "safety_score": 9
+    }
+  },
+  "metadata": {
+    "rotterdam_gate": {
+      "capacity": {
+        "value": 5200000000,
+        "unit": "j",
+        "description": "terminal capacity",
+        "type": "instance",
+        "added_by": "Terminal Engineer",
+        "source": "Gate Terminal Data",
+        "date_added": "2024-01-01",
+        "confidence": 0.96
+      },
+      "cost": {
+        "value": 18500000,
+        "unit": "usd",
+        "description": "terminal cost",
+        "type": "instance",
+        "added_by": "Terminal Engineer",
+        "source": "Gate Terminal Data",
+        "date_added": "2024-01-01",
+        "confidence": 0.96
+      },
+      "throughput_j_day": {
+        "value": 580000,
+        "unit": "",
+        "description": "terminal throughput j day",
+        "type": "instance",
+        "added_by": "Terminal Engineer",
+        "source": "Gate Terminal Data",
+        "date_added": "2024-01-01",
+        "confidence": 0.96
+      },
+      "efficiency": {
+        "value": 0.94,
+        "unit": "ratio",
+        "description": "terminal efficiency",
+        "type": "instance",
+        "added_by": "Terminal Engineer",
+        "source": "Gate Terminal Data",
+        "date_added": "2024-01-01",
+        "confidence": 0.96
+      },
+      "safety_score": {
+        "value": 9.3,
+        "unit": "",
+        "description": "terminal safety score",
+        "type": "instance",
+        "added_by": "Terminal Engineer",
+        "source": "Gate Terminal Data",
+        "date_added": "2024-01-01",
+        "confidence": 0.96
+      }
+    },
+    "zeebrugge_lng": {
+      "capacity": {
+        "value": 3800000000,
+        "unit": "j",
+        "description": "terminal capacity",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "Zeebrugge Reports",
+        "date_added": "2024-01-01",
+        "confidence": 0.93
+      },
+      "cost": {
+        "value": 14200000,
+        "unit": "usd",
+        "description": "terminal cost",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "Zeebrugge Reports",
+        "date_added": "2024-01-01",
+        "confidence": 0.93
+      },
+      "throughput_j_day": {
+        "value": 420000,
+        "unit": "",
+        "description": "terminal throughput j day",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "Zeebrugge Reports",
+        "date_added": "2024-01-01",
+        "confidence": 0.93
+      },
+      "efficiency": {
+        "value": 0.91,
+        "unit": "ratio",
+        "description": "terminal efficiency",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "Zeebrugge Reports",
+        "date_added": "2024-01-01",
+        "confidence": 0.93
+      },
+      "safety_score": {
+        "value": 9.1,
+        "unit": "",
+        "description": "terminal safety score",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "Zeebrugge Reports",
+        "date_added": "2024-01-01",
+        "confidence": 0.93
+      }
+    },
+    "montoir_terminal": {
+      "capacity": {
+        "value": 2900000000,
+        "unit": "j",
+        "description": "terminal capacity",
+        "type": "instance",
+        "added_by": "Terminal Engineer",
+        "source": "Montoir Data",
+        "date_added": "2024-01-01",
+        "confidence": 0.87
+      },
+      "throughput_j_day": {
+        "value": 320000,
+        "unit": "",
+        "description": "terminal throughput j day",
+        "type": "instance",
+        "added_by": "Terminal Engineer",
+        "source": "Montoir Data",
+        "date_added": "2024-01-01",
+        "confidence": 0.87
+      },
+      "efficiency": {
+        "value": 0.88,
+        "unit": "ratio",
+        "description": "terminal efficiency",
+        "type": "instance",
+        "added_by": "Terminal Engineer",
+        "source": "Montoir Data",
+        "date_added": "2024-01-01",
+        "confidence": 0.87
+      },
+      "safety_score": {
+        "value": 8.9,
+        "unit": "",
+        "description": "terminal safety score",
+        "type": "instance",
+        "added_by": "Terminal Engineer",
+        "source": "Montoir Data",
+        "date_added": "2024-01-01",
+        "confidence": 0.87
+      }
+    },
+    "isle_of_grain": {
+      "capacity": {
+        "value": 4100000000,
+        "unit": "j",
+        "description": "terminal capacity",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "National Grid",
+        "date_added": "2024-01-01",
+        "confidence": 0.91
+      },
+      "cost": {
+        "value": 15800000,
+        "unit": "usd",
+        "description": "terminal cost",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "National Grid",
+        "date_added": "2024-01-01",
+        "confidence": 0.91
+      },
+      "efficiency": {
+        "value": 0.9,
+        "unit": "ratio",
+        "description": "terminal efficiency",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "National Grid",
+        "date_added": "2024-01-01",
+        "confidence": 0.91
+      },
+      "safety_score": {
+        "value": 9,
+        "unit": "",
+        "description": "terminal safety score",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "National Grid",
+        "date_added": "2024-01-01",
+        "confidence": 0.91
+      }
+    }
+  }
+}

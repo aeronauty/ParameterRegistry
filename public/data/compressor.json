@@ -1,0 +1,73 @@
+{
+  "instances": {
+    "siemens_sgt800": {
+      "power": 3200,
+      "cost": 620000
+    },
+    "ge_lm2500": {
+      "power": 2800,
+      "cost": 580000
+    },
+    "solar_mars100": {
+      "power": 1900
+    }
+  },
+  "metadata": {
+    "siemens_sgt800": {
+      "power": {
+        "value": 3200,
+        "unit": "kw",
+        "description": "compressor power",
+        "type": "instance",
+        "added_by": "Mechanical Engineer",
+        "source": "Siemens Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.95
+      },
+      "cost": {
+        "value": 620000,
+        "unit": "usd",
+        "description": "compressor cost",
+        "type": "instance",
+        "added_by": "Mechanical Engineer",
+        "source": "Siemens Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.95
+      }
+    },
+    "ge_lm2500": {
+      "power": {
+        "value": 2800,
+        "unit": "kw",
+        "description": "compressor power",
+        "type": "instance",
+        "added_by": "Procurement",
+        "source": "GE Quote",
+        "date_added": "2024-01-01",
+        "confidence": 0.92
+      },
+      "cost": {
+        "value": 580000,
+        "unit": "usd",
+        "description": "compressor cost",
+        "type": "instance",
+        "added_by": "Procurement",
+        "source": "GE Quote",
+        "date_added": "2024-01-01",
+        "confidence": 0.92
+      }
+    },
+    "solar_mars100": {
+      "power": {
+        "value": 1900,
+        "unit": "kw",
+        "description": "compressor power",
+        "type": "instance",
+        "added_by": "Engineering",
+        "source": "Solar Turbines",
+        "date_added": "2024-01-01",
+        "confidence": 0.88
+      }
+    }
+  }
+}

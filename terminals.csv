@@ -1,0 +1,5 @@
+instance,capacity_j,cost_usd,throughput_j_day,efficiency_ratio,safety_score,added_by,source,confidence
+rotterdam_gate,5200000000,18500000,580000,0.94,9.3,Terminal Engineer,Gate Terminal Data,0.96
+zeebrugge_lng,3800000000,14200000,420000,0.91,9.1,Operations,Zeebrugge Reports,0.93
+montoir_terminal,2900000000,,320000,0.88,8.9,Terminal Engineer,Montoir Data,0.87
+isle_of_grain,4100000000,15800000,,0.90,9.0,Operations,National Grid,0.91

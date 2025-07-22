@@ -1,0 +1,6 @@
+instance,capacity_mj,cost_usd,efficiency_ratio,range_km,fuel_rate_l_per_100km,maintenance_cost_annual_usd,added_by,source,confidence
+volvo_fh460,185000,89000,0.87,780,38,12500,Fleet Manager,Volvo Specs,0.92
+scania_r500,195000,94000,0.89,820,36,13200,Fleet Manager,Scania Specs,0.90
+man_tgx,170000,82000,0.84,740,,11800,Operations,MAN Datasheet,0.88
+iveco_stralis,178000,86000,,760,39,,Procurement,Iveco Quote,0.85
+mercedes_actros,188000,91000,0.86,790,37,12800,Fleet Manager,Mercedes Specs,0.91

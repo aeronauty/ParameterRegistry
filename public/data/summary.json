@@ -1,0 +1,17 @@
+{
+  "classes": [
+    "lng_truck",
+    "pipeline",
+    "terminal",
+    "compressor"
+  ],
+  "constants": [
+    "methane.properties.lower_heating_value",
+    "methane.properties.density_stp"
+  ],
+  "metadata": {
+    "created": "2025-07-17T18:33:21.244Z",
+    "version": "1.0",
+    "description": "Hierarchical Parameter Registry with Interactive Interface"
+  }
+}

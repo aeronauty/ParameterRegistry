@@ -1,0 +1,5 @@
+instance,capacity_j_day,cost_per_km_usd,pressure_bar,added_by,source,confidence
+nord_stream_segment,55000000,280000,75,Engineering,Pipeline Database,0.94
+trans_adriatic,36000000,220000,68,Engineering,TAP Specs,0.92
+regional_feeder_a,18000000,150000,,Project Manager,Regional Study,0.80
+distribution_main,28000000,190000,62,Engineering,Design Specs,0.89

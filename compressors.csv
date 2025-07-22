@@ -1,0 +1,4 @@
+instance,power_kw,cost_usd,added_by,source,confidence
+siemens_sgt800,3200,620000,Mechanical Engineer,Siemens Datasheet,0.95
+ge_lm2500,2800,580000,Procurement,GE Quote,0.92
+solar_mars100,1900,,Engineering,Solar Turbines,0.88
