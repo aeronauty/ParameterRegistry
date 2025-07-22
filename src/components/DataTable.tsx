@@ -26,16 +26,21 @@ export const DataTable: React.FC<DataTableProps> = ({
   }
 
   // Generate column definitions from data
-  const columnDefs: ColDef[] = Object.keys(data[0]).map(key => {
+  const columnDefs: ColDef[] = Object.keys(data[0]).map((key) => {
     const colDef: ColDef = {
       headerName: key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
       field: key,
       sortable: true,
       filter: true,
       resizable: true,
+      // Use flex for auto-sizing but with minimum constraints
       flex: 1,
-      minWidth: 120
+      minWidth: key === 'instance' ? 150 : 120,
+      maxWidth: 300
     };
+
+    // Debug: Log column definition
+    // console.log('Column definition for', key, ':', colDef);
 
     // Format specific column types
     if (key.toLowerCase().includes('cost') || key.toLowerCase().includes('usd')) {
@@ -71,6 +76,10 @@ export const DataTable: React.FC<DataTableProps> = ({
     return colDef;
   });
 
+  // Debug: Log final column definitions and data
+  // console.log('Final columnDefs:', columnDefs);
+  // console.log('Data sample:', data.slice(0, 2));
+
   const onSelectionChanged = (event: any) => {
     const selectedRows = event.api.getSelectedRows();
     if (selectedRows.length > 0 && onRowSelection) {
@@ -86,7 +95,7 @@ export const DataTable: React.FC<DataTableProps> = ({
           <strong>Selected Instance:</strong> {selectedInstance}
         </div>
       )}
-      <div className="ag-theme-alpine" style={{ height: '400px', width: '100%' }}>
+      <div className="ag-theme-alpine w-full" style={{ height: '400px', width: '100%' }}>
         <AgGridReact
           rowData={data}
           columnDefs={columnDefs}
@@ -94,12 +103,24 @@ export const DataTable: React.FC<DataTableProps> = ({
             sortable: true,
             filter: true,
             resizable: true,
+            flex: 1,
+            minWidth: 120,
           }}
           rowSelection="single"
           onSelectionChanged={onSelectionChanged}
           pagination={true}
           paginationPageSize={10}
           domLayout="normal"
+          suppressHorizontalScroll={false}
+          enableRangeSelection={false}
+          onGridReady={(params) => {
+            // Auto-size columns when grid is ready
+            params.api.sizeColumnsToFit();
+          }}
+          onGridSizeChanged={(params) => {
+            // Auto-size columns when grid size changes
+            params.api.sizeColumnsToFit();
+          }}
         />
       </div>
     </div>

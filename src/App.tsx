@@ -127,7 +127,12 @@ export const App: React.FC = () => {
     );
   }
 
+    // Generate table data for display
   const tableData = DataProcessor.processClassDataForTable(classData);
+  
+  // Debug: Log table data structure
+  // console.log('Table Data Sample:', tableData.slice(0, 2));
+  // console.log('Table Data Keys:', tableData.length > 0 ? Object.keys(tableData[0]) : []);
 
   return (
     <div className="min-h-screen bg-gray-50">

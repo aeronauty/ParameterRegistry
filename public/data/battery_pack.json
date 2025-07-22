@@ -1,322 +1,322 @@
 {
   "instances": {
-    "tesla_powerwall": {
-      "capacity_kwh": 13.5,
-      "cost": 7000,
-      "efficiency": 0.9,
-      "cycle_life": 6000,
-      "energy_density_wh_per_kg": 260,
-      "maintenance_cost_annual": 200
+    "volvo_fh460": {
+      "capacity": 185000,
+      "cost": 89000,
+      "efficiency": 0.87,
+      "range": 780,
+      "fuel_rate_l_per_100km": 38,
+      "maintenance_cost_annual": 12500
     },
-    "lg_chem_resu": {
-      "capacity_kwh": 9.8,
-      "cost": 5500,
-      "efficiency": 0.92,
-      "cycle_life": 6000,
-      "energy_density_wh_per_kg": 270,
-      "maintenance_cost_annual": 150
+    "scania_r500": {
+      "capacity": 195000,
+      "cost": 94000,
+      "efficiency": 0.89,
+      "range": 820,
+      "fuel_rate_l_per_100km": 36,
+      "maintenance_cost_annual": 13200
     },
-    "byd_battery_box": {
-      "capacity_kwh": 10.2,
-      "cost": 4800,
-      "efficiency": 0.88,
-      "energy_density_wh_per_kg": 250,
-      "maintenance_cost_annual": 180
+    "man_tgx": {
+      "capacity": 170000,
+      "cost": 82000,
+      "efficiency": 0.84,
+      "range": 740,
+      "maintenance_cost_annual": 11800
     },
-    "sonnen_eco": {
-      "capacity_kwh": 15,
-      "cost": 8500,
-      "cycle_life": 5500,
-      "energy_density_wh_per_kg": 240
+    "iveco_stralis": {
+      "capacity": 178000,
+      "cost": 86000,
+      "range": 760,
+      "fuel_rate_l_per_100km": 39
     },
-    "enphase_encharge": {
-      "capacity_kwh": 10.1,
-      "cost": 6200,
-      "efficiency": 0.91,
-      "cycle_life": 4000,
-      "energy_density_wh_per_kg": 255,
-      "maintenance_cost_annual": 120
+    "mercedes_actros": {
+      "capacity": 188000,
+      "cost": 91000,
+      "efficiency": 0.86,
+      "range": 790,
+      "fuel_rate_l_per_100km": 37,
+      "maintenance_cost_annual": 12800
     }
   },
   "metadata": {
-    "tesla_powerwall": {
-      "capacity_kwh": {
-        "value": 13.5,
-        "unit": "",
-        "description": "battery_pack capacity kwh",
+    "volvo_fh460": {
+      "capacity": {
+        "value": 185000,
+        "unit": "mj",
+        "description": "battery_pack capacity",
         "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Tesla Specs",
-        "date_added": "2024-01-01",
-        "confidence": 0.95
-      },
-      "cost": {
-        "value": 7000,
-        "unit": "usd",
-        "description": "battery_pack cost",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Tesla Specs",
-        "date_added": "2024-01-01",
-        "confidence": 0.95
-      },
-      "efficiency": {
-        "value": 0.9,
-        "unit": "ratio",
-        "description": "battery_pack efficiency",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Tesla Specs",
-        "date_added": "2024-01-01",
-        "confidence": 0.95
-      },
-      "cycle_life": {
-        "value": 6000,
-        "unit": "",
-        "description": "battery_pack cycle life",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Tesla Specs",
-        "date_added": "2024-01-01",
-        "confidence": 0.95
-      },
-      "energy_density_wh_per_kg": {
-        "value": 260,
-        "unit": "",
-        "description": "battery_pack energy density wh per kg",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Tesla Specs",
-        "date_added": "2024-01-01",
-        "confidence": 0.95
-      },
-      "maintenance_cost_annual": {
-        "value": 200,
-        "unit": "usd",
-        "description": "battery_pack maintenance cost annual",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Tesla Specs",
-        "date_added": "2024-01-01",
-        "confidence": 0.95
-      }
-    },
-    "lg_chem_resu": {
-      "capacity_kwh": {
-        "value": 9.8,
-        "unit": "",
-        "description": "battery_pack capacity kwh",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "LG Datasheet",
-        "date_added": "2024-01-01",
-        "confidence": 0.9
-      },
-      "cost": {
-        "value": 5500,
-        "unit": "usd",
-        "description": "battery_pack cost",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "LG Datasheet",
-        "date_added": "2024-01-01",
-        "confidence": 0.9
-      },
-      "efficiency": {
-        "value": 0.92,
-        "unit": "ratio",
-        "description": "battery_pack efficiency",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "LG Datasheet",
-        "date_added": "2024-01-01",
-        "confidence": 0.9
-      },
-      "cycle_life": {
-        "value": 6000,
-        "unit": "",
-        "description": "battery_pack cycle life",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "LG Datasheet",
-        "date_added": "2024-01-01",
-        "confidence": 0.9
-      },
-      "energy_density_wh_per_kg": {
-        "value": 270,
-        "unit": "",
-        "description": "battery_pack energy density wh per kg",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "LG Datasheet",
-        "date_added": "2024-01-01",
-        "confidence": 0.9
-      },
-      "maintenance_cost_annual": {
-        "value": 150,
-        "unit": "usd",
-        "description": "battery_pack maintenance cost annual",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "LG Datasheet",
-        "date_added": "2024-01-01",
-        "confidence": 0.9
-      }
-    },
-    "byd_battery_box": {
-      "capacity_kwh": {
-        "value": 10.2,
-        "unit": "",
-        "description": "battery_pack capacity kwh",
-        "type": "instance",
-        "added_by": "Procurement",
-        "source": "BYD Quote",
-        "date_added": "2024-01-01",
-        "confidence": 0.88
-      },
-      "cost": {
-        "value": 4800,
-        "unit": "usd",
-        "description": "battery_pack cost",
-        "type": "instance",
-        "added_by": "Procurement",
-        "source": "BYD Quote",
-        "date_added": "2024-01-01",
-        "confidence": 0.88
-      },
-      "efficiency": {
-        "value": 0.88,
-        "unit": "ratio",
-        "description": "battery_pack efficiency",
-        "type": "instance",
-        "added_by": "Procurement",
-        "source": "BYD Quote",
-        "date_added": "2024-01-01",
-        "confidence": 0.88
-      },
-      "energy_density_wh_per_kg": {
-        "value": 250,
-        "unit": "",
-        "description": "battery_pack energy density wh per kg",
-        "type": "instance",
-        "added_by": "Procurement",
-        "source": "BYD Quote",
-        "date_added": "2024-01-01",
-        "confidence": 0.88
-      },
-      "maintenance_cost_annual": {
-        "value": 180,
-        "unit": "usd",
-        "description": "battery_pack maintenance cost annual",
-        "type": "instance",
-        "added_by": "Procurement",
-        "source": "BYD Quote",
-        "date_added": "2024-01-01",
-        "confidence": 0.88
-      }
-    },
-    "sonnen_eco": {
-      "capacity_kwh": {
-        "value": 15,
-        "unit": "",
-        "description": "battery_pack capacity kwh",
-        "type": "instance",
-        "added_by": "Operations",
-        "source": "Sonnen Specs",
-        "date_added": "2024-01-01",
-        "confidence": 0.85
-      },
-      "cost": {
-        "value": 8500,
-        "unit": "usd",
-        "description": "battery_pack cost",
-        "type": "instance",
-        "added_by": "Operations",
-        "source": "Sonnen Specs",
-        "date_added": "2024-01-01",
-        "confidence": 0.85
-      },
-      "cycle_life": {
-        "value": 5500,
-        "unit": "",
-        "description": "battery_pack cycle life",
-        "type": "instance",
-        "added_by": "Operations",
-        "source": "Sonnen Specs",
-        "date_added": "2024-01-01",
-        "confidence": 0.85
-      },
-      "energy_density_wh_per_kg": {
-        "value": 240,
-        "unit": "",
-        "description": "battery_pack energy density wh per kg",
-        "type": "instance",
-        "added_by": "Operations",
-        "source": "Sonnen Specs",
-        "date_added": "2024-01-01",
-        "confidence": 0.85
-      }
-    },
-    "enphase_encharge": {
-      "capacity_kwh": {
-        "value": 10.1,
-        "unit": "",
-        "description": "battery_pack capacity kwh",
-        "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Enphase Datasheet",
+        "added_by": "Fleet Manager",
+        "source": "Volvo Specs",
         "date_added": "2024-01-01",
         "confidence": 0.92
       },
       "cost": {
-        "value": 6200,
+        "value": 89000,
         "unit": "usd",
         "description": "battery_pack cost",
         "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Enphase Datasheet",
+        "added_by": "Fleet Manager",
+        "source": "Volvo Specs",
         "date_added": "2024-01-01",
         "confidence": 0.92
       },
       "efficiency": {
-        "value": 0.91,
+        "value": 0.87,
         "unit": "ratio",
         "description": "battery_pack efficiency",
         "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Enphase Datasheet",
+        "added_by": "Fleet Manager",
+        "source": "Volvo Specs",
         "date_added": "2024-01-01",
         "confidence": 0.92
       },
-      "cycle_life": {
-        "value": 4000,
-        "unit": "",
-        "description": "battery_pack cycle life",
+      "range": {
+        "value": 780,
+        "unit": "km",
+        "description": "battery_pack range",
         "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Enphase Datasheet",
+        "added_by": "Fleet Manager",
+        "source": "Volvo Specs",
         "date_added": "2024-01-01",
         "confidence": 0.92
       },
-      "energy_density_wh_per_kg": {
-        "value": 255,
+      "fuel_rate_l_per_100km": {
+        "value": 38,
         "unit": "",
-        "description": "battery_pack energy density wh per kg",
+        "description": "battery_pack fuel rate l per 100km",
         "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Enphase Datasheet",
+        "added_by": "Fleet Manager",
+        "source": "Volvo Specs",
         "date_added": "2024-01-01",
         "confidence": 0.92
       },
       "maintenance_cost_annual": {
-        "value": 120,
+        "value": 12500,
         "unit": "usd",
         "description": "battery_pack maintenance cost annual",
         "type": "instance",
-        "added_by": "Systems Engineer",
-        "source": "Enphase Datasheet",
+        "added_by": "Fleet Manager",
+        "source": "Volvo Specs",
         "date_added": "2024-01-01",
         "confidence": 0.92
+      }
+    },
+    "scania_r500": {
+      "capacity": {
+        "value": 195000,
+        "unit": "mj",
+        "description": "battery_pack capacity",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Scania Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      },
+      "cost": {
+        "value": 94000,
+        "unit": "usd",
+        "description": "battery_pack cost",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Scania Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      },
+      "efficiency": {
+        "value": 0.89,
+        "unit": "ratio",
+        "description": "battery_pack efficiency",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Scania Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      },
+      "range": {
+        "value": 820,
+        "unit": "km",
+        "description": "battery_pack range",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Scania Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      },
+      "fuel_rate_l_per_100km": {
+        "value": 36,
+        "unit": "",
+        "description": "battery_pack fuel rate l per 100km",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Scania Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      },
+      "maintenance_cost_annual": {
+        "value": 13200,
+        "unit": "usd",
+        "description": "battery_pack maintenance cost annual",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Scania Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.9
+      }
+    },
+    "man_tgx": {
+      "capacity": {
+        "value": 170000,
+        "unit": "mj",
+        "description": "battery_pack capacity",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "MAN Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.88
+      },
+      "cost": {
+        "value": 82000,
+        "unit": "usd",
+        "description": "battery_pack cost",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "MAN Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.88
+      },
+      "efficiency": {
+        "value": 0.84,
+        "unit": "ratio",
+        "description": "battery_pack efficiency",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "MAN Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.88
+      },
+      "range": {
+        "value": 740,
+        "unit": "km",
+        "description": "battery_pack range",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "MAN Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.88
+      },
+      "maintenance_cost_annual": {
+        "value": 11800,
+        "unit": "usd",
+        "description": "battery_pack maintenance cost annual",
+        "type": "instance",
+        "added_by": "Operations",
+        "source": "MAN Datasheet",
+        "date_added": "2024-01-01",
+        "confidence": 0.88
+      }
+    },
+    "iveco_stralis": {
+      "capacity": {
+        "value": 178000,
+        "unit": "mj",
+        "description": "battery_pack capacity",
+        "type": "instance",
+        "added_by": "Procurement",
+        "source": "Iveco Quote",
+        "date_added": "2024-01-01",
+        "confidence": 0.85
+      },
+      "cost": {
+        "value": 86000,
+        "unit": "usd",
+        "description": "battery_pack cost",
+        "type": "instance",
+        "added_by": "Procurement",
+        "source": "Iveco Quote",
+        "date_added": "2024-01-01",
+        "confidence": 0.85
+      },
+      "range": {
+        "value": 760,
+        "unit": "km",
+        "description": "battery_pack range",
+        "type": "instance",
+        "added_by": "Procurement",
+        "source": "Iveco Quote",
+        "date_added": "2024-01-01",
+        "confidence": 0.85
+      },
+      "fuel_rate_l_per_100km": {
+        "value": 39,
+        "unit": "",
+        "description": "battery_pack fuel rate l per 100km",
+        "type": "instance",
+        "added_by": "Procurement",
+        "source": "Iveco Quote",
+        "date_added": "2024-01-01",
+        "confidence": 0.85
+      }
+    },
+    "mercedes_actros": {
+      "capacity": {
+        "value": 188000,
+        "unit": "mj",
+        "description": "battery_pack capacity",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Mercedes Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.91
+      },
+      "cost": {
+        "value": 91000,
+        "unit": "usd",
+        "description": "battery_pack cost",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Mercedes Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.91
+      },
+      "efficiency": {
+        "value": 0.86,
+        "unit": "ratio",
+        "description": "battery_pack efficiency",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Mercedes Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.91
+      },
+      "range": {
+        "value": 790,
+        "unit": "km",
+        "description": "battery_pack range",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Mercedes Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.91
+      },
+      "fuel_rate_l_per_100km": {
+        "value": 37,
+        "unit": "",
+        "description": "battery_pack fuel rate l per 100km",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Mercedes Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.91
+      },
+      "maintenance_cost_annual": {
+        "value": 12800,
+        "unit": "usd",
+        "description": "battery_pack maintenance cost annual",
+        "type": "instance",
+        "added_by": "Fleet Manager",
+        "source": "Mercedes Specs",
+        "date_added": "2024-01-01",
+        "confidence": 0.91
       }
     }
   }

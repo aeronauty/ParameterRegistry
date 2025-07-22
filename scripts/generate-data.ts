@@ -74,7 +74,7 @@ class DataGenerator {
 
   async loadCSVData() {
     const csvFiles = [
-      { type: 'lng_truck', file: 'lng_trucks.csv', category: 'distribution' },
+      { type: 'battery_pack', file: 'battery_packs.csv', category: 'distribution' },
       { type: 'pipeline', file: 'pipelines.csv', category: 'distribution' },
       { type: 'terminal', file: 'terminals.csv', category: 'storage' },
       { type: 'compressor', file: 'compressors.csv', category: 'infrastructure' }

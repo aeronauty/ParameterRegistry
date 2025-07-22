@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "created": "2025-07-17T18:33:21.244Z",
+    "created": "2025-07-22T12:41:15.185Z",
     "version": "1.0",
     "description": "Hierarchical Parameter Registry with Interactive Interface"
   },
@@ -27,7 +27,7 @@
     }
   },
   "classes": {
-    "lng_truck": {
+    "battery_pack": {
       "instances": {
         "volvo_fh460": {
           "capacity": 185000,
@@ -72,7 +72,7 @@
           "capacity": {
             "value": 185000,
             "unit": "mj",
-            "description": "lng_truck capacity",
+            "description": "battery_pack capacity",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Volvo Specs",
@@ -82,7 +82,7 @@
           "cost": {
             "value": 89000,
             "unit": "usd",
-            "description": "lng_truck cost",
+            "description": "battery_pack cost",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Volvo Specs",
@@ -92,7 +92,7 @@
           "efficiency": {
             "value": 0.87,
             "unit": "ratio",
-            "description": "lng_truck efficiency",
+            "description": "battery_pack efficiency",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Volvo Specs",
@@ -102,7 +102,7 @@
           "range": {
             "value": 780,
             "unit": "km",
-            "description": "lng_truck range",
+            "description": "battery_pack range",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Volvo Specs",
@@ -112,7 +112,7 @@
           "fuel_rate_l_per_100km": {
             "value": 38,
             "unit": "",
-            "description": "lng_truck fuel rate l per 100km",
+            "description": "battery_pack fuel rate l per 100km",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Volvo Specs",
@@ -122,7 +122,7 @@
           "maintenance_cost_annual": {
             "value": 12500,
             "unit": "usd",
-            "description": "lng_truck maintenance cost annual",
+            "description": "battery_pack maintenance cost annual",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Volvo Specs",
@@ -134,7 +134,7 @@
           "capacity": {
             "value": 195000,
             "unit": "mj",
-            "description": "lng_truck capacity",
+            "description": "battery_pack capacity",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Scania Specs",
@@ -144,7 +144,7 @@
           "cost": {
             "value": 94000,
             "unit": "usd",
-            "description": "lng_truck cost",
+            "description": "battery_pack cost",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Scania Specs",
@@ -154,7 +154,7 @@
           "efficiency": {
             "value": 0.89,
             "unit": "ratio",
-            "description": "lng_truck efficiency",
+            "description": "battery_pack efficiency",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Scania Specs",
@@ -164,7 +164,7 @@
           "range": {
             "value": 820,
             "unit": "km",
-            "description": "lng_truck range",
+            "description": "battery_pack range",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Scania Specs",
@@ -174,7 +174,7 @@
           "fuel_rate_l_per_100km": {
             "value": 36,
             "unit": "",
-            "description": "lng_truck fuel rate l per 100km",
+            "description": "battery_pack fuel rate l per 100km",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Scania Specs",
@@ -184,7 +184,7 @@
           "maintenance_cost_annual": {
             "value": 13200,
             "unit": "usd",
-            "description": "lng_truck maintenance cost annual",
+            "description": "battery_pack maintenance cost annual",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Scania Specs",
@@ -196,7 +196,7 @@
           "capacity": {
             "value": 170000,
             "unit": "mj",
-            "description": "lng_truck capacity",
+            "description": "battery_pack capacity",
             "type": "instance",
             "added_by": "Operations",
             "source": "MAN Datasheet",
@@ -206,7 +206,7 @@
           "cost": {
             "value": 82000,
             "unit": "usd",
-            "description": "lng_truck cost",
+            "description": "battery_pack cost",
             "type": "instance",
             "added_by": "Operations",
             "source": "MAN Datasheet",
@@ -216,7 +216,7 @@
           "efficiency": {
             "value": 0.84,
             "unit": "ratio",
-            "description": "lng_truck efficiency",
+            "description": "battery_pack efficiency",
             "type": "instance",
             "added_by": "Operations",
             "source": "MAN Datasheet",
@@ -226,7 +226,7 @@
           "range": {
             "value": 740,
             "unit": "km",
-            "description": "lng_truck range",
+            "description": "battery_pack range",
             "type": "instance",
             "added_by": "Operations",
             "source": "MAN Datasheet",
@@ -236,7 +236,7 @@
           "maintenance_cost_annual": {
             "value": 11800,
             "unit": "usd",
-            "description": "lng_truck maintenance cost annual",
+            "description": "battery_pack maintenance cost annual",
             "type": "instance",
             "added_by": "Operations",
             "source": "MAN Datasheet",
@@ -248,7 +248,7 @@
           "capacity": {
             "value": 178000,
             "unit": "mj",
-            "description": "lng_truck capacity",
+            "description": "battery_pack capacity",
             "type": "instance",
             "added_by": "Procurement",
             "source": "Iveco Quote",
@@ -258,7 +258,7 @@
           "cost": {
             "value": 86000,
             "unit": "usd",
-            "description": "lng_truck cost",
+            "description": "battery_pack cost",
             "type": "instance",
             "added_by": "Procurement",
             "source": "Iveco Quote",
@@ -268,7 +268,7 @@
           "range": {
             "value": 760,
             "unit": "km",
-            "description": "lng_truck range",
+            "description": "battery_pack range",
             "type": "instance",
             "added_by": "Procurement",
             "source": "Iveco Quote",
@@ -278,7 +278,7 @@
           "fuel_rate_l_per_100km": {
             "value": 39,
             "unit": "",
-            "description": "lng_truck fuel rate l per 100km",
+            "description": "battery_pack fuel rate l per 100km",
             "type": "instance",
             "added_by": "Procurement",
             "source": "Iveco Quote",
@@ -290,7 +290,7 @@
           "capacity": {
             "value": 188000,
             "unit": "mj",
-            "description": "lng_truck capacity",
+            "description": "battery_pack capacity",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Mercedes Specs",
@@ -300,7 +300,7 @@
           "cost": {
             "value": 91000,
             "unit": "usd",
-            "description": "lng_truck cost",
+            "description": "battery_pack cost",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Mercedes Specs",
@@ -310,7 +310,7 @@
           "efficiency": {
             "value": 0.86,
             "unit": "ratio",
-            "description": "lng_truck efficiency",
+            "description": "battery_pack efficiency",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Mercedes Specs",
@@ -320,7 +320,7 @@
           "range": {
             "value": 790,
             "unit": "km",
-            "description": "lng_truck range",
+            "description": "battery_pack range",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Mercedes Specs",
@@ -330,7 +330,7 @@
           "fuel_rate_l_per_100km": {
             "value": 37,
             "unit": "",
-            "description": "lng_truck fuel rate l per 100km",
+            "description": "battery_pack fuel rate l per 100km",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Mercedes Specs",
@@ -340,7 +340,7 @@
           "maintenance_cost_annual": {
             "value": 12800,
             "unit": "usd",
-            "description": "lng_truck maintenance cost annual",
+            "description": "battery_pack maintenance cost annual",
             "type": "instance",
             "added_by": "Fleet Manager",
             "source": "Mercedes Specs",

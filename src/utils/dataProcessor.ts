@@ -134,16 +134,15 @@ export class DataProcessor {
         const yCol = numericColumns[i];
 
         if (i === j) {
-          // Diagonal: histogram with proper y-axis scaling
-          const allValues = tableData.map(row => row[xCol]).filter(v => v != null && typeof v === 'number');
+          // Diagonal: histogram
+          const histData = tableData.map(row => row[xCol]).filter(v => v != null && typeof v === 'number');
           
-          if (allValues.length > 0) {
+          if (histData.length > 0) {
             traces.push({
               type: 'histogram',
-              x: allValues,
-              name: `${xCol}`,
-              marker: { color: colors[0] },
-              showlegend: i === 0 && j === 0,
+              x: histData,
+              marker: { color: 'lightblue', opacity: 0.7 },
+              showlegend: false,
               xaxis: `x${i * n + j + 1}`,
               yaxis: `y${i * n + j + 1}`
             });
@@ -151,7 +150,8 @@ export class DataProcessor {
         } else {
           // Off-diagonal: scatter plot
           const xData = tableData.map(row => row[xCol]);
-          const yData = tableData.map(row => row[yCol]); // This should use yCol, not xCol!
+          const yData = tableData.map(row => row[yCol]);
+          
           const instanceColors = instances.map(instance => 
             colors[uniqueInstances.indexOf(instance) % colors.length]
           );

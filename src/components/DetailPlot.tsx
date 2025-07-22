@@ -7,43 +7,41 @@ interface DetailPlotProps {
   classData: ClassData;
   xParam: string;
   yParam: string;
-  className: string;
+  className?: string;
   onPointClick?: (instance: string) => void;
 }
 
-export const DetailPlot: React.FC<DetailPlotProps> = ({ 
+const DetailPlot: React.FC<DetailPlotProps> = ({ 
   classData, 
   xParam, 
   yParam, 
-  onPointClick 
+  onPointClick
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const plotRef = useRef<any>(null);
   const [plotRevision, setPlotRevision] = useState(0);
-  const [plotDimensions, setPlotDimensions] = useState({ width: 0, height: 0 });
 
-  // Set up resize observer to trigger plot resize
+    // Set up ResizeObserver for dynamic resizing
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    const handleResize = () => {
+      if (plotRef.current && plotRef.current.resizeHandler) {
+        plotRef.current.resizeHandler();
+      }
+      setPlotRevision(prev => prev + 1);
+    };
 
     const resizeObserver = new ResizeObserver(() => {
-      const rect = container.getBoundingClientRect();
-      setPlotDimensions({ width: rect.width, height: rect.height });
-      
-      // Force Plotly to relayout
-      setTimeout(() => {
-        if (plotRef.current) {
-          plotRef.current.resizeHandler();
-        }
-        setPlotRevision(prev => prev + 1);
-      }, 100);
+      handleResize();
     });
 
-    resizeObserver.observe(container);
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
 
     return () => {
-      resizeObserver.disconnect();
+      if (containerRef.current) {
+        resizeObserver.unobserve(containerRef.current);
+      }
     };
   }, []);
 
@@ -79,8 +77,10 @@ export const DetailPlot: React.FC<DetailPlotProps> = ({
     }
   };
 
-  // Generate consistent colors
-  const uniqueInstances = Array.from(new Set(text));
+  // Generate consistent colors using the shared utility
+  const uniqueInstances = Array.from(new Set(text)).sort(); // Sort for consistency
+  
+  // Create color mapping
   const colors = [
     '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
     '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'
@@ -150,3 +150,5 @@ export const DetailPlot: React.FC<DetailPlotProps> = ({
     </div>
   );
 };
+
+export { DetailPlot };
