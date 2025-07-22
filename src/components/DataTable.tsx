@@ -9,13 +9,15 @@ interface DataTableProps {
   selectedInstance?: string;
   onRowSelection?: (instance: string) => void;
   title?: string;
+  pinnedBottomRowData?: any[];
 }
 
 export const DataTable: React.FC<DataTableProps> = ({
   data,
   selectedInstance,
   onRowSelection,
-  title = "Data Table"
+  title = "Data Table",
+  pinnedBottomRowData = []
 }) => {
   if (!data || data.length === 0) {
     return (
@@ -83,38 +85,21 @@ export const DataTable: React.FC<DataTableProps> = ({
   const onSelectionChanged = (event: any) => {
     const selectedRows = event.api.getSelectedRows();
     if (selectedRows.length > 0 && onRowSelection) {
-      // Don't allow selection of statistical summary rows
       const instance = selectedRows[0].instance;
-      if (!instance.includes('📊') && !instance.includes('📈')) {
-        onRowSelection(instance);
-      }
+      onRowSelection(instance);
     }
-  };
-
-  // Custom row class function to highlight statistical rows
-  const getRowClass = (params: any) => {
-    if (params.data.instance && (params.data.instance.includes('📊') || params.data.instance.includes('📈'))) {
-      return 'statistical-row';
-    }
-    return '';
-  };
-
-  // Check if row is selectable (not a statistical summary)
-  const isRowSelectable = (rowNode: any) => {
-    const instance = rowNode.data.instance;
-    return !instance.includes('📊') && !instance.includes('📈');
   };
 
   return (
     <div className="w-full">
       <style>
         {`
-          .statistical-row {
+          .ag-pinned-bottom-row {
             background-color: #f8f9fa !important;
             font-weight: bold !important;
             border-top: 2px solid #dee2e6 !important;
           }
-          .statistical-row .ag-cell {
+          .ag-pinned-bottom-row .ag-cell {
             font-weight: bold !important;
           }
         `}
@@ -143,8 +128,7 @@ export const DataTable: React.FC<DataTableProps> = ({
           domLayout="normal"
           suppressHorizontalScroll={false}
           enableRangeSelection={false}
-          getRowClass={getRowClass}
-          isRowSelectable={isRowSelectable}
+          pinnedBottomRowData={pinnedBottomRowData}
           onGridReady={(params) => {
             // Auto-size columns when grid is ready
             params.api.sizeColumnsToFit();

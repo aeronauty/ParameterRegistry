@@ -74,8 +74,8 @@ export const App: React.FC = () => {
         setClassData(data);
         
         // Update parameter options
-        const tableData = DataProcessor.processClassDataForTable(data);
-        const numericCols = DataProcessor.getNumericColumns(tableData);
+        const { dataRows } = DataProcessor.processClassDataForTableWithSeparateStats(data);
+        const numericCols = DataProcessor.getNumericColumns(dataRows);
         setParamOptions(numericCols);
         setAvailableParameters(numericCols);
         
@@ -148,11 +148,11 @@ export const App: React.FC = () => {
   }
 
     // Generate table data for display
-  const tableData = DataProcessor.processClassDataForTable(classData);
+  const { dataRows, statisticalRows } = DataProcessor.processClassDataForTableWithSeparateStats(classData);
   
   // Debug: Log table data structure
-  // console.log('Table Data Sample:', tableData.slice(0, 2));
-  // console.log('Table Data Keys:', tableData.length > 0 ? Object.keys(tableData[0]) : []);
+  // console.log('Data Rows Sample:', dataRows.slice(0, 2));
+  // console.log('Statistical Rows:', statisticalRows);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -307,10 +307,11 @@ export const App: React.FC = () => {
         <div className="mt-6">
           <div className="bg-white rounded-lg shadow p-6">
             <DataTable
-              data={tableData}
+              data={dataRows}
               selectedInstance={selectedInstance}
               onRowSelection={handleRowSelection}
               title={`${selectedClass.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} - Parameter Values`}
+              pinnedBottomRowData={statisticalRows}
             />
           </div>
         </div>

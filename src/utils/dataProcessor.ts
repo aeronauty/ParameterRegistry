@@ -42,6 +42,44 @@ export class DataProcessor {
     return [...dataRows, ...statisticalRows];
   }
 
+  static processClassDataForTableWithSeparateStats(classData: ClassData): { 
+    dataRows: TableRow[]; 
+    statisticalRows: TableRow[] 
+  } {
+    const instances = Object.keys(classData.instances);
+    if (instances.length === 0) return { dataRows: [], statisticalRows: [] };
+
+    // Get all unique parameters across all instances
+    const allParameters = new Set<string>();
+    Object.values(classData.instances).forEach(instance => {
+      Object.keys(instance).forEach(param => allParameters.add(param));
+    });
+
+    // Build table rows for instances
+    const dataRows = instances.map(instanceName => {
+      const row: TableRow = { instance: instanceName };
+      const instanceData = classData.instances[instanceName];
+      const instanceMetadata = classData.metadata[instanceName] || {};
+
+      allParameters.forEach(param => {
+        if (instanceData[param] !== undefined) {
+          const metadata = instanceMetadata[param];
+          const unit = metadata?.unit || '';
+          const cleanName = param.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+          const columnName = unit ? `${cleanName} (${unit})` : cleanName;
+          row[columnName] = instanceData[param];
+        }
+      });
+
+      return row;
+    });
+
+    // Calculate statistical summaries
+    const statisticalRows = this.calculateStatisticalSummaries(dataRows);
+    
+    return { dataRows, statisticalRows };
+  }
+
   private static calculateStatisticalSummaries(dataRows: TableRow[]): TableRow[] {
     if (dataRows.length === 0) return [];
 
