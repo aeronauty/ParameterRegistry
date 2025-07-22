@@ -104,7 +104,7 @@ export class DataProcessor {
     return { x, y, text, customdata };
   }
 
-  static createPairPlotData(classData: ClassData, selectedParameters?: string[]) {
+  static createPairPlotData(classData: ClassData, selectedParameters?: string[], instanceColorMap?: { [instance: string]: string }) {
     const tableData = this.processClassDataForTable(classData);
     const allNumericColumns = this.getNumericColumns(tableData);
     
@@ -120,13 +120,23 @@ export class DataProcessor {
     const n = numericColumns.length;
     const traces: any[] = [];
 
-    // Generate color palette
+    // Generate color palette - use provided map or fallback
     const instances = tableData.map(row => row.instance);
     const uniqueInstances = Array.from(new Set(instances));
-    const colors = [
-      '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
-      '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'
-    ];
+    
+    // Use provided color map or create fallback  
+    const getInstanceColor = (instance: string) => {
+      if (instanceColorMap && instanceColorMap[instance]) {
+        return instanceColorMap[instance];
+      }
+      // Fallback to default colors
+      const defaultColors = [
+        '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
+        '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'
+      ];
+      const index = uniqueInstances.indexOf(instance);
+      return defaultColors[index % defaultColors.length];
+    };
 
     for (let i = 0; i < n; i++) {
       for (let j = 0; j < n; j++) {
@@ -153,7 +163,7 @@ export class DataProcessor {
           const yData = tableData.map(row => row[yCol]);
           
           const instanceColors = instances.map(instance => 
-            colors[uniqueInstances.indexOf(instance) % colors.length]
+            getInstanceColor(instance)
           );
 
           traces.push({

@@ -9,13 +9,15 @@ interface DetailPlotProps {
   yParam: string;
   className?: string;
   onPointClick?: (instance: string) => void;
+  instanceColorMap: { [instance: string]: string };
 }
 
 const DetailPlot: React.FC<DetailPlotProps> = ({ 
   classData, 
   xParam, 
   yParam, 
-  onPointClick
+  onPointClick,
+  instanceColorMap
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const plotRef = useRef<any>(null);
@@ -77,17 +79,24 @@ const DetailPlot: React.FC<DetailPlotProps> = ({
     }
   };
 
-  // Generate consistent colors using the shared utility
-  const uniqueInstances = Array.from(new Set(text)).sort(); // Sort for consistency
+  // Generate consistent colors using the provided color map
+  const uniqueInstances = Array.from(new Set(text)).sort();
   
-  // Create color mapping
-  const colors = [
-    '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
-    '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'
-  ];
-  const instanceColors = text.map(instance => 
-    colors[uniqueInstances.indexOf(instance) % colors.length]
-  );
+  // Use provided color map or fallback to default colors
+  const getInstanceColor = (instance: string) => {
+    if (instanceColorMap && instanceColorMap[instance]) {
+      return instanceColorMap[instance];
+    }
+    // Fallback to default colors
+    const defaultColors = [
+      '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
+      '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'
+    ];
+    const index = uniqueInstances.indexOf(instance);
+    return defaultColors[index % defaultColors.length];
+  };
+  
+  const instanceColors = text.map(instance => getInstanceColor(instance));
 
   const data = [{
     type: 'scatter' as const,

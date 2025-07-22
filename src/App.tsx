@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { ChevronDown, Settings } from 'lucide-react';
 import { dataService } from './services/dataService';
 import { ClassData, Summary } from './types';
@@ -22,6 +22,24 @@ export const App: React.FC = () => {
   const [isParameterSelectorOpen, setIsParameterSelectorOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
+
+  // Create instance-to-color mapping when classData changes
+  const instanceColorMap = useMemo(() => {
+    if (!classData) return {};
+    
+    const allInstances = Object.keys(classData.instances).sort(); // Sort for repeatability
+    const colors = [
+      '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
+      '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'
+    ];
+    
+    const colorMap: { [instance: string]: string } = {};
+    allInstances.forEach((instance, index) => {
+      colorMap[instance] = colors[index % colors.length];
+    });
+    
+    return colorMap;
+  }, [classData]);
 
   // Load summary data on mount
   useEffect(() => {
@@ -243,6 +261,7 @@ export const App: React.FC = () => {
                     className={selectedClass}
                     selectedParameters={selectedParameters}
                     onPlotClick={handlePairPlotClick}
+                    instanceColorMap={instanceColorMap}
                   />
                 </div>
               </div>
@@ -257,6 +276,7 @@ export const App: React.FC = () => {
                     yParam={yParam}
                     className={selectedClass}
                     onPointClick={handleDetailPlotClick}
+                    instanceColorMap={instanceColorMap}
                   />
                 </div>
               </div>
