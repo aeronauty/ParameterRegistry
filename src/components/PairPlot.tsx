@@ -9,10 +9,11 @@ interface PairPlotProps {
   selectedParameters?: string[];
   onPlotClick?: (data: { x_param: string; y_param: string; instance: string }) => void;
   instanceColorMap: { [instance: string]: string };
+  plotBuffer?: number;
 }
 
-export const PairPlot: React.FC<PairPlotProps> = ({ classData, className, selectedParameters, onPlotClick, instanceColorMap }) => {
-  const { data, layout, numericColumns } = DataProcessor.createPairPlotData(classData, selectedParameters, instanceColorMap);
+export const PairPlot: React.FC<PairPlotProps> = ({ classData, className, selectedParameters, onPlotClick, instanceColorMap, plotBuffer = 10 }) => {
+  const { data, layout, numericColumns } = DataProcessor.createPairPlotData(classData, selectedParameters, instanceColorMap, plotBuffer);
   const containerRef = useRef<HTMLDivElement>(null);
   const plotRef = useRef<any>(null);
   const [plotRevision, setPlotRevision] = useState(0);

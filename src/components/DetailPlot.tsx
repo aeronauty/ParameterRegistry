@@ -10,6 +10,7 @@ interface DetailPlotProps {
   className?: string;
   onPointClick?: (instance: string) => void;
   instanceColorMap: { [instance: string]: string };
+  plotBuffer?: number;
 }
 
 const DetailPlot: React.FC<DetailPlotProps> = ({ 
@@ -17,7 +18,8 @@ const DetailPlot: React.FC<DetailPlotProps> = ({
   xParam, 
   yParam, 
   onPointClick,
-  instanceColorMap
+  instanceColorMap,
+  plotBuffer = 10
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const plotRef = useRef<any>(null);
@@ -50,7 +52,7 @@ const DetailPlot: React.FC<DetailPlotProps> = ({
   // Also trigger resize when xParam or yParam changes
   useEffect(() => {
     setPlotRevision(prev => prev + 1);
-  }, [xParam, yParam]);
+  }, [xParam, yParam, plotBuffer]);
 
   if (!xParam || !yParam) {
     return (
@@ -114,6 +116,17 @@ const DetailPlot: React.FC<DetailPlotProps> = ({
     customdata: customdata
   }] as any;
 
+  // Calculate axis ranges with buffer
+  const xMin = Math.min(...x);
+  const xMax = Math.max(...x);
+  const yMin = Math.min(...y);
+  const yMax = Math.max(...y);
+  
+  const xRange = xMax - xMin;
+  const yRange = yMax - yMin;
+  const xPadding = xRange * (plotBuffer / 100);
+  const yPadding = yRange * (plotBuffer / 100);
+
   const layout = {
     title: `${yParam} vs ${xParam}`,
     xaxis: {
@@ -122,7 +135,8 @@ const DetailPlot: React.FC<DetailPlotProps> = ({
       showline: true,
       linewidth: 1,
       linecolor: 'black',
-      zeroline: false
+      zeroline: false,
+      range: [xMin - xPadding, xMax + xPadding]
     },
     yaxis: {
       title: yParam,
@@ -130,7 +144,8 @@ const DetailPlot: React.FC<DetailPlotProps> = ({
       showline: true,
       linewidth: 1,
       linecolor: 'black',
-      zeroline: false
+      zeroline: false,
+      range: [yMin - yPadding, yMax + yPadding]
     },
     plot_bgcolor: 'white',
     paper_bgcolor: 'white',

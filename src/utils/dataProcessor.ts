@@ -104,7 +104,7 @@ export class DataProcessor {
     return { x, y, text, customdata };
   }
 
-  static createPairPlotData(classData: ClassData, selectedParameters?: string[], instanceColorMap?: { [instance: string]: string }) {
+  static createPairPlotData(classData: ClassData, selectedParameters?: string[], instanceColorMap?: { [instance: string]: string }, plotBuffer: number = 10) {
     const tableData = this.processClassDataForTable(classData);
     const allNumericColumns = this.getNumericColumns(tableData);
     
@@ -201,7 +201,7 @@ export class DataProcessor {
       if (allValues.length > 0) {
         const min = Math.min(...allValues);
         const max = Math.max(...allValues);
-        const padding = (max - min) * 0.05; // 5% padding
+        const padding = (max - min) * (plotBuffer / 100); // Use plotBuffer percentage
         paramRanges[col] = { 
           min: min - padding, 
           max: max + padding 

@@ -7,6 +7,7 @@ import { DetailPlot } from './components/DetailPlot';
 import { DataTable } from './components/DataTable';
 import { ResizablePanes } from './components/ResizablePanes';
 import { ParameterSelector } from './components/ParameterSelector';
+import { BufferSlider } from './components/BufferSlider';
 import { DataProcessor } from './utils/dataProcessor';
 
 export const App: React.FC = () => {
@@ -22,6 +23,7 @@ export const App: React.FC = () => {
   const [isParameterSelectorOpen, setIsParameterSelectorOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
+  const [plotBuffer, setPlotBuffer] = useState<number>(10); // Default 10% buffer
 
   // Create instance-to-color mapping when classData changes
   const instanceColorMap = useMemo(() => {
@@ -246,6 +248,17 @@ export const App: React.FC = () => {
                 <ChevronDown className="absolute right-2 top-2.5 h-4 w-4 text-gray-400 pointer-events-none" />
               </div>
             </div>
+
+            {/* Plot Buffer Slider */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Plot Buffer
+              </label>
+              <BufferSlider
+                value={plotBuffer}
+                onChange={setPlotBuffer}
+              />
+            </div>
           </div>
         </div>
 
@@ -262,6 +275,7 @@ export const App: React.FC = () => {
                     selectedParameters={selectedParameters}
                     onPlotClick={handlePairPlotClick}
                     instanceColorMap={instanceColorMap}
+                    plotBuffer={plotBuffer}
                   />
                 </div>
               </div>
@@ -277,6 +291,7 @@ export const App: React.FC = () => {
                     className={selectedClass}
                     onPointClick={handleDetailPlotClick}
                     instanceColorMap={instanceColorMap}
+                    plotBuffer={plotBuffer}
                   />
                 </div>
               </div>
