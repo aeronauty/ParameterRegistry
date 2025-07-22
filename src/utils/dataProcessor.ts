@@ -16,8 +16,8 @@ export class DataProcessor {
       Object.keys(instance).forEach(param => allParameters.add(param));
     });
 
-    // Build table rows
-    return instances.map(instanceName => {
+    // Build table rows for instances
+    const dataRows = instances.map(instanceName => {
       const row: TableRow = { instance: instanceName };
       const instanceData = classData.instances[instanceName];
       const instanceMetadata = classData.metadata[instanceName] || {};
@@ -34,6 +34,47 @@ export class DataProcessor {
 
       return row;
     });
+
+    // Calculate statistical summaries
+    const statisticalRows = this.calculateStatisticalSummaries(dataRows);
+    
+    // Return data rows followed by statistical summaries
+    return [...dataRows, ...statisticalRows];
+  }
+
+  private static calculateStatisticalSummaries(dataRows: TableRow[]): TableRow[] {
+    if (dataRows.length === 0) return [];
+
+    // Get all numeric columns
+    const numericColumns = this.getNumericColumns(dataRows);
+    
+    // Calculate mean row
+    const meanRow: TableRow = { instance: '📊 MEAN' };
+    numericColumns.forEach(col => {
+      const values = dataRows.map(row => row[col]).filter(v => v != null && typeof v === 'number');
+      if (values.length > 0) {
+        const mean = values.reduce((sum, val) => sum + val, 0) / values.length;
+        meanRow[col] = parseFloat(mean.toFixed(3));
+      } else {
+        meanRow[col] = null;
+      }
+    });
+
+    // Calculate standard deviation row
+    const stdRow: TableRow = { instance: '📈 STD DEV' };
+    numericColumns.forEach(col => {
+      const values = dataRows.map(row => row[col]).filter(v => v != null && typeof v === 'number');
+      if (values.length > 1) {
+        const mean = values.reduce((sum, val) => sum + val, 0) / values.length;
+        const variance = values.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / (values.length - 1);
+        const stdDev = Math.sqrt(variance);
+        stdRow[col] = parseFloat(stdDev.toFixed(3));
+      } else {
+        stdRow[col] = null;
+      }
+    });
+
+    return [meanRow, stdRow];
   }
 
   static getNumericColumns(rows: TableRow[]): string[] {
@@ -106,7 +147,9 @@ export class DataProcessor {
 
   static createPairPlotData(classData: ClassData, selectedParameters?: string[], instanceColorMap?: { [instance: string]: string }, plotBuffer: number = 10) {
     const tableData = this.processClassDataForTable(classData);
-    const allNumericColumns = this.getNumericColumns(tableData);
+    // Filter out statistical summary rows for plotting
+    const plotData = tableData.filter(row => !row.instance.includes('📊') && !row.instance.includes('📈'));
+    const allNumericColumns = this.getNumericColumns(plotData);
     
     // Use selected parameters if provided, otherwise use all numeric columns
     const numericColumns = selectedParameters && selectedParameters.length > 0 
@@ -121,7 +164,7 @@ export class DataProcessor {
     const traces: any[] = [];
 
     // Generate color palette - use provided map or fallback
-    const instances = tableData.map(row => row.instance);
+    const instances = plotData.map(row => row.instance);
     const uniqueInstances = Array.from(new Set(instances));
     
     // Use provided color map or create fallback  
@@ -145,7 +188,7 @@ export class DataProcessor {
 
         if (i === j) {
           // Diagonal: histogram
-          const histData = tableData.map(row => row[xCol]).filter(v => v != null && typeof v === 'number');
+          const histData = plotData.map(row => row[xCol]).filter(v => v != null && typeof v === 'number');
           
           if (histData.length > 0) {
             traces.push({
@@ -159,8 +202,8 @@ export class DataProcessor {
           }
         } else {
           // Off-diagonal: scatter plot
-          const xData = tableData.map(row => row[xCol]);
-          const yData = tableData.map(row => row[yCol]);
+          const xData = plotData.map(row => row[xCol]);
+          const yData = plotData.map(row => row[yCol]);
           
           const instanceColors = instances.map(instance => 
             getInstanceColor(instance)
@@ -197,7 +240,7 @@ export class DataProcessor {
     // Calculate ranges for each parameter to ensure consistent scales
     const paramRanges: { [key: string]: { min: number; max: number } } = {};
     numericColumns.forEach(col => {
-      const allValues = tableData.map(row => row[col]).filter(v => v != null && typeof v === 'number');
+      const allValues = plotData.map(row => row[col]).filter(v => v != null && typeof v === 'number');
       if (allValues.length > 0) {
         const min = Math.min(...allValues);
         const max = Math.max(...allValues);
