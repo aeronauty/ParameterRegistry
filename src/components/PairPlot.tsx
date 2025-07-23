@@ -84,11 +84,6 @@ export const PairPlot: React.FC<PairPlotProps> = ({ classData, className, select
 
   return (
     <div ref={containerRef} className="w-full h-full flex flex-col">
-      <div className="text-center mb-2 flex-shrink-0">
-        <p className="text-sm text-gray-600 italic">
-          Click on any subplot to view in detail panel →
-        </p>
-      </div>
       <div className="flex-1 min-h-0">
         <Plot
           ref={plotRef}

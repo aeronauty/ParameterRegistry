@@ -189,6 +189,27 @@ export class DataProcessor {
     const plotData = tableData.filter(row => !row.instance.includes('📊') && !row.instance.includes('📈'));
     const allNumericColumns = this.getNumericColumns(plotData);
     
+    // Helper function to wrap long text with <br> tags
+    const wrapText = (text: string, maxCharsPerLine: number = 20): string => {
+      if (text.length <= maxCharsPerLine) return text;
+      
+      const words = text.split(' ');
+      const lines: string[] = [];
+      let currentLine = '';
+      
+      for (const word of words) {
+        if (currentLine.length + word.length + 1 <= maxCharsPerLine) {
+          currentLine += (currentLine ? ' ' : '') + word;
+        } else {
+          if (currentLine) lines.push(currentLine);
+          currentLine = word;
+        }
+      }
+      if (currentLine) lines.push(currentLine);
+      
+      return lines.join('<br>');
+    };
+    
     // Use selected parameters if provided, otherwise use all numeric columns
     const numericColumns = selectedParameters && selectedParameters.length > 0 
       ? selectedParameters.filter(param => allNumericColumns.includes(param))
@@ -268,11 +289,12 @@ export class DataProcessor {
     const layout: any = {
       title: 'Parameter Relationships',
       showlegend: true,
-      height: 600,
+      height: 700, // Increased height to accommodate wrapped text
       font: { size: 10 },
       plot_bgcolor: 'white',
       paper_bgcolor: 'white',
-      margin: { t: 60, r: 30, b: 60, l: 60 },
+      margin: { t: 80, r: 80, b: 120, l: 150 }, // Increased margins for wrapped text
+      autosize: true,
     };
 
     // Calculate ranges for each parameter to ensure consistent scales
@@ -301,30 +323,42 @@ export class DataProcessor {
         const yParam = numericColumns[i];
 
         layout[xAxisKey] = {
-          domain: [j / n + 0.01, (j + 1) / n - 0.01],
+          domain: [j / n + 0.02, (j + 1) / n - 0.02], // Increased spacing between columns
           anchor: `y${axisNum}`,
           showgrid: false,
           showline: i === n - 1, // Only show axis line on bottom row
           linewidth: 1,
           linecolor: 'black',
-          title: i === n - 1 ? numericColumns[j] : undefined,
-          titlefont: { size: 10 },
+          title: i === n - 1 ? {
+            text: wrapText(numericColumns[j], 15), // Wrap x-axis titles
+            standoff: 25, // Add space between title and axis
+          } : undefined,
+          titlefont: { size: 9 },
           showticklabels: i === n - 1, // Only show tick labels on bottom row
           tickfont: { size: 8 },
+          tickangle: 0, // Keep x-axis labels horizontal
+          automargin: true, // Allow automatic margin adjustment
           range: paramRanges[xParam] ? [paramRanges[xParam].min, paramRanges[xParam].max] : undefined
         };
 
         layout[yAxisKey] = {
-          domain: [(n - i - 1) / n + 0.01, (n - i) / n - 0.01],
+          domain: [(n - i - 1) / n + 0.02, (n - i) / n - 0.02], // Increased spacing between rows
           anchor: `x${axisNum}`,
           showgrid: false,
           showline: j === 0, // Only show axis line on leftmost column
           linewidth: 1,
           linecolor: 'black',
-          title: j === 0 ? numericColumns[i] : undefined,
-          titlefont: { size: 10 },
+          title: j === 0 ? {
+            text: wrapText(numericColumns[i], 12), // Wrap y-axis titles (shorter lines for vertical space)
+            standoff: 35, // Add more space for y-axis titles
+            angle: 90, // Explicitly set y-axis title to horizontal (override default -90)
+          } : undefined,
+          titlefont: { size: 9 },
           showticklabels: j === 0, // Only show tick labels on leftmost column
           tickfont: { size: 8 },
+          tickangle: 0, // Keep tick labels horizontal
+          automargin: true, // Allow automatic margin adjustment
+          side: 'left',
           range: i === j ? [0, undefined] : (paramRanges[yParam] ? [paramRanges[yParam].min, paramRanges[yParam].max] : undefined)
         };
       }
